@@ -4,7 +4,7 @@ const logger = require("./logger.config");
 function setupSocket(server) {
   const io = new socketIO.Server(server, {
     pingTimeout: 60000,
-    cors: { origin: process.env.CLIENT_URL },
+    cors: { origin: "*" },
   });
 
   io.on("connection", (socket) => {
